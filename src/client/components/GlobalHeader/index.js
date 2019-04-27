@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 import { css } from 'react-emotion';
 
 import profileImage from './assets/profile.jpg';
@@ -18,6 +18,7 @@ const headerContainer = css`
   z-index: ${MAX_Z_INDEX};
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 const profile = css`
@@ -27,11 +28,57 @@ const profile = css`
   margin-right: 24px;
 `;
 
+const flexRow = css`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const addButton = css`
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fafafa;
+  background: transparent;
+  color: #fafafa;
+  font-size: 32px;
+  line-height: 32px;
+  display: flex;
+  justify-content: center;
+  transition: background, transform .2s ease-out;
+  transform: scale(1);
+`;
+
+const clickedButton = css`
+  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.1);
+`;
+
 const GlobalHeader = () => {
+  const buttonRef = useRef();
+
+  const handleClick = useCallback(() => {
+    requestAnimationFrame(() => {
+      buttonRef.current.classList.add(clickedButton);
+      
+      setTimeout(() => {
+        buttonRef.current.classList.remove(clickedButton);
+      }, 200);
+    })
+  }, [buttonRef]);
+
   return (
     <div className={headerContainer}>
-      <img className={profile} src={profileImage} />
-      <div>Jacky Efendi</div>
+      <div className={flexRow}>
+        <img className={profile} src={profileImage} />
+        <div>Jacky Efendi</div>
+      </div>
+
+      {/* <div>
+        <div className={addButton} ref={buttonRef} onClick={handleClick}>
+          +
+        </div>
+      </div> */}
     </div>
   )
 }

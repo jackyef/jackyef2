@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 
 import Layout from '../components/Layout';
 import GlobalHeader from '../components/GlobalHeader';
-import { HomeView } from './Home';
+import HomeView from './Home/View';
 
 const Routes = ({ history }) => {
   return (

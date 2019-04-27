@@ -63,12 +63,12 @@ export default [
     ),
     background: 'linear-gradient(75deg, #6600c0 0, #9610f0 75%)',
   },
-  {
-    content: (
-      <Fragment>
-        <div className={styles.sectionHeader}>Let&lsquo;s Connect!</div>
-      </Fragment>
-    ),
-    background: 'linear-gradient(75deg, #003ad0 0, #005af0 75%)',
-  },
+  // {
+  //   content: (
+  //     <Fragment>
+  //       <div className={styles.sectionHeader}>Let&lsquo;s Connect!</div>
+  //     </Fragment>
+  //   ),
+  //   background: 'linear-gradient(75deg, #003ad0 0, #005af0 75%)',
+  // },
 ];

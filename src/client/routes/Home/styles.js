@@ -3,7 +3,7 @@ import { css } from 'react-emotion';
 export const container = css`
   display: flex;
   min-height: 100vh;
-  background: #fafafa;
+  background: #002031;
   flex-direction: column;
   z-index: 0;
 `;
