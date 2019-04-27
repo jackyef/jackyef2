@@ -1,15 +1,16 @@
 import React from 'react';
-import { object } from 'prop-types';
 import { Route, Switch } from 'react-router';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Layout from '../components/Layout';
 import GlobalHeader from '../components/GlobalHeader';
 import HomeView from './Home/View';
 
-const Routes = ({ history }) => {
+const basename = document.domain === 'jackyef.github.io' ? '/jackyef' : '/';
+
+const Routes = () => {
   return (
-    <Router history={history}>
+    <Router basename={basename}>
       <Layout>
         <GlobalHeader />
         <Switch>
@@ -18,10 +19,6 @@ const Routes = ({ history }) => {
       </Layout>
     </Router>
   );
-};
-
-Routes.propTypes = {
-  history: object.isRequired,
 };
 
 export default Routes;
