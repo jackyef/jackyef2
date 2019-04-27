@@ -16,7 +16,7 @@ export default {
   target: 'web', // tells webpack that this build will be run in browsers
   output: {
     filename: ifDev('[name].js','[name].[hash].js'),
-    path: path.resolve(__dirname, '../dist/client'),
+    path: path.resolve(__dirname, '../docs'),
   },
   module: {
     ...sharedModule,

@@ -1,4 +1,5 @@
-import React, { useRef, useCallback } from 'react';
+import React from 'react';
+// import React, { useRef, useCallback } from 'react';
 import { css } from 'react-emotion';
 
 import profileImage from './assets/profile.jpg';
@@ -34,38 +35,38 @@ const flexRow = css`
   align-items: center;
 `;
 
-const addButton = css`
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fafafa;
-  background: transparent;
-  color: #fafafa;
-  font-size: 32px;
-  line-height: 32px;
-  display: flex;
-  justify-content: center;
-  transition: background, transform .2s ease-out;
-  transform: scale(1);
-`;
+// const addButton = css`
+//   border-radius: 50%;
+//   width: 40px;
+//   height: 40px;
+//   border: 2px solid #fafafa;
+//   background: transparent;
+//   color: #fafafa;
+//   font-size: 32px;
+//   line-height: 32px;
+//   display: flex;
+//   justify-content: center;
+//   transition: background, transform .2s ease-out;
+//   transform: scale(1);
+// `;
 
-const clickedButton = css`
-  transform: scale(1.3);
-  background: rgba(255, 255, 255, 0.1);
-`;
+// const clickedButton = css`
+//   transform: scale(1.3);
+//   background: rgba(255, 255, 255, 0.1);
+// `;
 
 const GlobalHeader = () => {
-  const buttonRef = useRef();
+  // const buttonRef = useRef();
 
-  const handleClick = useCallback(() => {
-    requestAnimationFrame(() => {
-      buttonRef.current.classList.add(clickedButton);
+  // const handleClick = useCallback(() => {
+  //   requestAnimationFrame(() => {
+  //     buttonRef.current.classList.add(clickedButton);
       
-      setTimeout(() => {
-        buttonRef.current.classList.remove(clickedButton);
-      }, 200);
-    })
-  }, [buttonRef]);
+  //     setTimeout(() => {
+  //       buttonRef.current.classList.remove(clickedButton);
+  //     }, 200);
+  //   })
+  // }, [buttonRef]);
 
   return (
     <div className={headerContainer}>
