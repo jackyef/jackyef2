@@ -3,22 +3,25 @@ import { object } from 'prop-types';
 import { Route, Switch } from 'react-router';
 import { Router } from 'react-router-dom';
 
-import { AboutView } from './About';
+import Layout from '../components/Layout';
+import GlobalHeader from '../components/GlobalHeader';
 import { HomeView } from './Home';
 
-const RouterProvider = ({ history }) => {
+const Routes = ({ history }) => {
   return (
     <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={HomeView} />
-        <Route path="/about" component={AboutView} />
-      </Switch>
+      <Layout>
+        <GlobalHeader />
+        <Switch>
+          <Route exact path="/" component={HomeView} />
+        </Switch>
+      </Layout>
     </Router>
   );
 };
 
-RouterProvider.propTypes = {
+Routes.propTypes = {
   history: object.isRequired,
 };
 
-export default RouterProvider;
+export default Routes;

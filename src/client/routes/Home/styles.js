@@ -1,14 +1,15 @@
-import styled from 'react-emotion';
+import { css } from 'react-emotion';
 
-export const HomeContainer = styled.div`
+export const container = css`
   display: flex;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: #e0e0e0;
-  font-size: 24px;
+  background: #fafafa;
+  flex-direction: column;
+  z-index: 0;
+`;
 
-  img {
-    width: 32px;
-  }
+export const sectionHeader = css`
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
 `;
