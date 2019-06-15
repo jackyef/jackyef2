@@ -26,6 +26,12 @@ export default {
         test: /\.(png|jpe?g|gif|svg)$/, 
         use: [
           {
+            loader: 'sqip-loader',
+            options: {
+              numberOfPrimitives: 20,
+            }
+          },
+          {
             loader: 'file-loader',
             options: {
               name (_file) {
