@@ -45,6 +45,23 @@ export default {
           }
         ]
       },
+      {
+        test: /\.(ttf)$/, 
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name (_file) {
+                if (process.env.NODE_ENV === 'development') {
+                  return '[path][name].[ext]';
+                } else {
+                  return '[hash].[ext]';
+                }
+              }
+            },
+          }
+        ]
+      },
     ],
   },
   plugins: [

@@ -1,21 +1,22 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import Section from '../../components/Section';
+import Image from '../../components/Image/Image';
 
-import sections from './constants/sections';
-
+import profilePicture from './assets/new-pp-square.jpeg';
 import * as styles from './styles';
 
 const Home = () => {
-  const renderedSections = useMemo(() =>
-    sections.map((section, index) => (
-      <Section key={index} background={section.background}>
-        {section.content}
-      </Section>
-    ))
+  return (
+    <header className={styles.container}>
+      <div className={styles.profileImageContainer}>
+        <Image className={styles.profileImage} src={profilePicture.src} placeholderSrc={profilePicture.preview} />
+      </div>
+      <section className={styles.profileCard}>
+        <h3>Jacky Efendi</h3>
+        <p>Jakarta, ID 🇮🇩</p>
+      </section>
+    </header>
   );
-
-  return <div className={styles.container}>{renderedSections}</div>;
 };
 
 export default Home;

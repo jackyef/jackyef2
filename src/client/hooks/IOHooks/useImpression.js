@@ -1,14 +1,17 @@
 import { useRef, useEffect, useCallback } from 'react';
 
 /**
- * This hook accept a callback function `onIntersect`
- * and returns a `targetRef`
+ * @param {Function} onIntersect Function to call once intersected
+ * @param {Object} optionsData Options object used to initialize IntersectionObserver
+ * @param {boolean} onlyOnce Whether to stop observing after onIntersect is fired once
+ * 
+ * @returns {Object} A ref object created by useRef. Use this to assign to the element you want to observe.
  *
  * Usage:
  * const Component = () => {
  *   const targetRef = useImpression(() => console.log('impressed!'));
  *
- *   return <div ref={targetRef}>asdasdsad</div>
+ *   return <div ref={targetRef}>Something here</div>
  * }
  */
 
