@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Layout from '../components/Layout';
-// import GlobalHeader from '../components/GlobalHeader';
 import HomeNewView from './HomeNew/View';
 import HomeView from './Home';
 
@@ -13,10 +12,9 @@ const Routes = () => {
   return (
     <Router basename={basename}>
       <Layout>
-        {/* <GlobalHeader /> */}
         <Switch>
-          <Route exact path="/" component={HomeNewView} />
-          <Route exact path="/old" component={HomeView} />
+          <Route exact path="/new" component={HomeNewView} />
+          <Route exact path="/" component={HomeView} />
         </Switch>
       </Layout>
     </Router>

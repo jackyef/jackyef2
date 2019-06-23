@@ -15,18 +15,31 @@ injectGlobal`
 export const container = css`
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(45deg, #c1c6c0, white);
   flex-direction: column;
   z-index: 0;
 `;
 
 export const content = css`
   padding: 16px;
+  transform: translateY(-114px);
+  transition: .3s cubic-bezier(.15,.79,.4,.95);
+`;
+
+export const contentBackground = css`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: linear-gradient(45deg, rgb(193,198,192), rgb(255,255,255));
+  box-shadow: 0 -4px 9px 0px rgba(0,0,0,.3);
 `;
 
 export const profileImageContainer = css`
   width: 100vw;
   height: 100vw;
+  transition: .3s cubic-bezier(.15,.79,.4,.95);
 `;
 
 export const profileImage = css`
@@ -42,8 +55,8 @@ export const profileCard = css`
   border-radius: 4px;
   box-shadow: 0 2px 9px 0px grey;
   position: relative;
-  top: -114px;
-  margin-bottom: -108px;
+  //top: -114px;
+  //margin-bottom: -114px;
   padding: 24px 16px;
   font-size: 14px;
 
@@ -96,7 +109,7 @@ border-radius: 4px;
 box-shadow: 0 2px 9px 0px grey;
 position: relative;
 padding: 16px;
-margin: 8px 0;
+margin: 16px 0;
 font-size: 14px;
 
 > h3 {

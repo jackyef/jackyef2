@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import Image from '../../components/Image/Image';
 
@@ -9,13 +9,34 @@ import twitterIcon from './assets/twitter/Twitter-Social-Icons/Twitter_SocialIco
 import * as styles from './styles';
 
 const Home = () => {
+  const contentBackgroundRef = useRef();
+  const contentRef = useRef();
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const MAX_TRANSLATE = 114;
+      const percentage =  Math.min(window.scrollY / window.innerWidth * 1.7, 1);
+      const translateContent = Math.min((1 - percentage) * -MAX_TRANSLATE, 0);
+
+      contentRef.current.style.transform = `translateY(${translateContent}px)`;
+      contentBackgroundRef.current.style.opacity = percentage;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <header className={styles.container}>
       <div className={styles.profileImageContainer}>
         <Image className={styles.profileImage} src={profilePicture.src} placeholderSrc={profilePicture.preview} />
       </div>
 
-      <div className={styles.content}>
+      <div className={styles.content} ref={contentRef}>
+        <div className={styles.contentBackground} ref={contentBackgroundRef} />
         <section className={styles.profileCard}>
           <h3>Jacky Efendi</h3>
           <p>Jakarta, ID 🇮🇩</p>

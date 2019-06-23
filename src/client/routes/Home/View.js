@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import Section from '../../components/Section';
-
+import GlobalHeader from '../../components/GlobalHeader';
 import sections from './constants/sections';
 
 import * as styles from './styles';
@@ -15,8 +15,12 @@ const Home = () => {
     ))
   );
 
-  return <div className={styles.container}>{renderedSections}</div>;
+  return (
+    <>
+      <GlobalHeader />
+      <div className={styles.container}>{renderedSections}</div>
+    </>
+  );
 };
 
 export default Home;
-
