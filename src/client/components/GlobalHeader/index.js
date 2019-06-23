@@ -2,6 +2,7 @@ import React from 'react';
 // import React, { useRef, useCallback } from 'react';
 import { css } from 'react-emotion';
 
+import Image from '../Image/Image';
 import profileImage from './assets/profile.jpg';
 
 const MAX_Z_INDEX = 500000; // TODO: put this in a constants folder or something
@@ -71,7 +72,7 @@ const GlobalHeader = () => {
   return (
     <div className={headerContainer}>
       <div className={flexRow}>
-        <img className={profile} src={profileImage} />
+        <Image className={profile} src={profileImage.src} placeholderSrc={profileImage.preview} />
         <div>Jacky Efendi</div>
       </div>
 

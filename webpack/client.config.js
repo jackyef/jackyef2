@@ -26,6 +26,29 @@ export default {
         test: /\.(png|jpe?g|gif|svg)$/, 
         use: [
           {
+            loader: 'sqip-loader',
+            options: {
+              numberOfPrimitives: 20,
+            }
+          },
+          {
+            loader: 'file-loader',
+            options: {
+              name (_file) {
+                if (process.env.NODE_ENV === 'development') {
+                  return '[path][name].[ext]';
+                } else {
+                  return '[hash].[ext]';
+                }
+              }
+            },
+          }
+        ]
+      },
+      {
+        test: /\.(ttf)$/, 
+        use: [
+          {
             loader: 'file-loader',
             options: {
               name (_file) {
