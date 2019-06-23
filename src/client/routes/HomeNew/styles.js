@@ -15,7 +15,7 @@ injectGlobal`
 export const container = css`
   display: flex;
   min-height: 100vh;
-  background: #fff;
+  background: linear-gradient(45deg, #c1c6c0, white);
   flex-direction: column;
   z-index: 0;
 `;
@@ -45,6 +45,7 @@ export const profileCard = css`
   top: -114px;
   margin-bottom: -108px;
   padding: 24px 16px;
+  font-size: 14px;
 
   > h3 {
     margin: 0;
@@ -59,7 +60,6 @@ export const profileCard = css`
   }
 
   > p {
-    font-size: 0.8rem;
     text-align: center;
   }
 `;
@@ -72,6 +72,12 @@ export const flexRowCenter = css`
   align-items: center;
 `;
 
+export const divider = css`
+  height: 1px;
+  margin: 8px 0;
+  color: black;
+`;
+
 export const socialButton = css`
   flex: 1;
   text-align: center;
@@ -80,4 +86,28 @@ export const socialButton = css`
   height: auto;
   object-fit: cover;
   padding: 12px 36px;
+`;
+
+export const sectionCard = css`
+opacity: 0.85;
+background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(240, 240, 240, 0.9));
+align-self: center;
+border-radius: 4px;
+box-shadow: 0 2px 9px 0px grey;
+position: relative;
+padding: 16px;
+margin: 8px 0;
+font-size: 14px;
+
+> h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: Decovar, system-ui, sans-serif;
+  font-variation-settings: "WMX2" 50;
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 `;

@@ -14,7 +14,7 @@ const Home = () => {
       <div className={styles.profileImageContainer}>
         <Image className={styles.profileImage} src={profilePicture.src} placeholderSrc={profilePicture.preview} />
       </div>
-      
+
       <div className={styles.content}>
         <section className={styles.profileCard}>
           <h3>Jacky Efendi</h3>
@@ -39,14 +39,35 @@ const Home = () => {
               alt="Twitter"
             />
           </section>
+
+          <div className={styles.divider} />
+
+          <section>
+            I am a software engineer who loves the web platform. I believe that software engineering is not just about
+            writing code, but solving problems. I am striving to improve myself to be able to solve problems better and
+            improve upon existing solutions.
+          </section>
         </section>
 
-        <section>
-          Next section here
+        <section className={styles.sectionCard}>
+          <h3>Professional Experience</h3>
+          <p>
+            I am currently working at Tokopedia, focusing on the web platform and tinkering with NodeJS, React, Redux,
+            Webpack, PWA, Apollo, AMP, Svelte and GraphQL on a daily basis.
+          </p>
+          <p>My day-to-day responsibilities includes:</p>
+          <ul>
+            <li>Building and maintaining Tokopedia mobile web-app using React.js</li>
+            <li>Collaborating with other teams to deliver features on time</li>
+            <li>
+              Researching ways to improve web performance, both client-side and server-side, even if it means stepping
+              out of our regular stack.
+            </li>
+            <li>Sharing knowledge with peers</li>
+            <li>Mentor other engineers</li>
+          </ul>
         </section>
-        
       </div>
-
     </header>
   );
 };
