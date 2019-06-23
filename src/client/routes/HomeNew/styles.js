@@ -1,16 +1,15 @@
-import { css, injectGlobal } from 'react-emotion';
+import { css } from 'react-emotion';
 
 // TODO: make this font loading optional, only import it if user want to see cool stuffs
+// import DecovarFont from './fonts/DecovarAlpha-VF.subset.ttf';
 
-import DecovarFont from './fonts/DecovarAlpha-VF.subset.ttf';
-
-injectGlobal`
-@font-face {
-  font-family: Decovar;
-  src: url(${DecovarFont});
-  font-display: swap;
-}
-`;
+// injectGlobal`
+// @font-face {
+//   font-family: Decovar;
+//   src: url(${DecovarFont});
+//   font-display: swap;
+// }
+// `;
 
 export const container = css`
   display: flex;
@@ -93,12 +92,14 @@ export const divider = css`
 
 export const socialButton = css`
   flex: 1;
-  text-align: center;
-  font-size: 0.8rem;
   width: 33.333%;
+  padding: 12px 36px;
+`;
+
+export const socialButtonImage = css`
+  width: 100%;
   height: auto;
   object-fit: cover;
-  padding: 12px 36px;
 `;
 
 export const sectionCard = css`

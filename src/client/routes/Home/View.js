@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-
 import Section from '../../components/Section';
 import GlobalHeader from '../../components/GlobalHeader';
 import sections from './constants/sections';

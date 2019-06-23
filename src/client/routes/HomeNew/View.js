@@ -41,24 +41,30 @@ const Home = () => {
           <h3>Jacky Efendi</h3>
           <p>Jakarta, ID 🇮🇩</p>
           <section className={styles.flexRowCenter}>
-            <Image
-              className={styles.socialButton}
-              src={githubIcon.src}
-              placeholderSrc={githubIcon.preview}
-              alt="GitHub"
-            />
-            <Image
-              className={styles.socialButton}
-              src={mediumIcon.src}
-              placeholderSrc={mediumIcon.preview}
-              alt="Medium"
-            />
-            <Image
-              className={styles.socialButton}
-              src={twitterIcon.src}
-              placeholderSrc={twitterIcon.preview}
-              alt="Twitter"
-            />
+            <a href="https://github.com/jackyef" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              <Image
+                className={styles.socialButtonImage}
+                src={githubIcon.src}
+                placeholderSrc={githubIcon.preview}
+                alt="GitHub"
+              />
+            </a>
+            <a href="https://medium.com/@jackyef" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              <Image
+                className={styles.socialButtonImage}
+                src={mediumIcon.src}
+                placeholderSrc={mediumIcon.preview}
+                alt="Medium"
+              />
+            </a>
+            <a href="https://twitter.com/jacky_efendi" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              <Image
+                className={styles.socialButtonImage}
+                src={twitterIcon.src}
+                placeholderSrc={twitterIcon.preview}
+                alt="Twitter"
+              />
+            </a>
           </section>
 
           <div className={styles.divider} />
